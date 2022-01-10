@@ -8,12 +8,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    private var theViewC: MaplyBaseViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        // Create empty map and add to view
+        theViewC = MaplyViewController(mapType: .typeFlat)
+        self.view.addSubview(theViewC!.view)
+        theViewC!.view.frame = self.view.bounds
+        addChild(theViewC!)
     }
-
-
 }
-
