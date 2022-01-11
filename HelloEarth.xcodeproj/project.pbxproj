@@ -15,6 +15,7 @@
 		19FED0F7278BE16D00C63656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19FED0F5278BE16D00C63656 /* LaunchScreen.storyboard */; };
 		19FED109278BE40C00C63656 /* WhirlyGlobeMaplyComponent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19FED105278BE3D800C63656 /* WhirlyGlobeMaplyComponent.framework */; };
 		19FED10A278BE40C00C63656 /* WhirlyGlobeMaplyComponent.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 19FED105278BE3D800C63656 /* WhirlyGlobeMaplyComponent.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		19FED10E278BF29100C63656 /* geography-class_medres.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 19FED10D278BF29100C63656 /* geography-class_medres.mbtiles */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		19FED0F6278BE16D00C63656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19FED0F8278BE16D00C63656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19FED0FF278BE3D800C63656 /* WhirlyGlobeMaplyComponent.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WhirlyGlobeMaplyComponent.xcodeproj; path = "libs/WhirlyGlobeMaply/ios/library/WhirlyGlobe-MaplyComponent/WhirlyGlobeMaplyComponent.xcodeproj"; sourceTree = "<group>"; };
+		19FED10D278BF29100C63656 /* geography-class_medres.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; path = "geography-class_medres.mbtiles"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 		19FED0E9278BE16C00C63656 /* HelloEarth */ = {
 			isa = PBXGroup;
 			children = (
+				19FED10C278BF26E00C63656 /* Resources */,
 				19FED0EA278BE16C00C63656 /* AppDelegate.swift */,
 				19FED0EC278BE16C00C63656 /* SceneDelegate.swift */,
 				19FED0EE278BE16C00C63656 /* ViewController.swift */,
@@ -118,6 +121,14 @@
 				19FED107278BE3D800C63656 /* WhirlyGlobeMaplyComponentTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		19FED10C278BF26E00C63656 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				19FED10D278BF29100C63656 /* geography-class_medres.mbtiles */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +213,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19FED10E278BF29100C63656 /* geography-class_medres.mbtiles in Resources */,
 				19FED0F7278BE16D00C63656 /* LaunchScreen.storyboard in Resources */,
 				19FED0F4278BE16D00C63656 /* Assets.xcassets in Resources */,
 				19FED0F2278BE16C00C63656 /* Main.storyboard in Resources */,
@@ -375,6 +387,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -405,6 +418,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
