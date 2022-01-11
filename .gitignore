@@ -3,5 +3,5 @@
 *.log
 tmp/
 
-## User settings
+# User settings
 xcuserdata/
