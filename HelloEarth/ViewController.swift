@@ -9,7 +9,6 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var mbTilesFetcher : MaplyMBTileFetcher? = nil
     var imageLoader : MaplyQuadImageLoader? = nil
 
     private var theViewC : WhirlyGlobeViewController?
@@ -22,23 +21,28 @@ class ViewController: UIViewController {
         theViewC!.view.frame = self.view.bounds
         addChild(theViewC!)
 
+        /* Black background for globe */
         theViewC!.clearColor = UIColor.black
-        theViewC!.frameInterval = 2
+        /* 60 FPS */
+        theViewC!.frameInterval = 1
 
-        mbTilesFetcher = MaplyMBTileFetcher(mbTiles: "geography-class_medres")
+        let cacheDir = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0]
+        let thisCacheDir = "\(cacheDir)/stamentiles/"
+        let maxZoom = Int32(16)
+        let tileInfo = MaplyRemoteTileInfoNew(baseURL: "http://tile.stamen.com/watercolor/{z}/{x}/{y}.png",
+                                              minZoom: Int32(0),
+                                              maxZoom: Int32(maxZoom))
+        tileInfo.cacheDir = thisCacheDir
 
         let sampleParams = MaplySamplingParams()
-        sampleParams.coordSys = mbTilesFetcher!.coordSys()
+        sampleParams.coordSys = MaplySphericalMercator(webStandard: ())
         sampleParams.coverPoles = true
         sampleParams.edgeMatching = true
-        sampleParams.minZoom = mbTilesFetcher!.minZoom()
-        sampleParams.maxZoom = mbTilesFetcher!.maxZoom()
+        sampleParams.minZoom = tileInfo.minZoom
+        sampleParams.maxZoom = tileInfo.maxZoom
         sampleParams.singleLevel = true
 
-        imageLoader = MaplyQuadImageLoader(params: sampleParams,
-            tileInfo: mbTilesFetcher!.tileInfo(),
-            viewC: theViewC!)
-        imageLoader!.setTileFetcher(mbTilesFetcher!)
+        imageLoader = MaplyQuadImageLoader(params: sampleParams, tileInfo: tileInfo, viewC: theViewC!)
         imageLoader!.baseDrawPriority = kMaplyImageLayerDrawPriorityDefault
 
         if let theViewC = theViewC {
